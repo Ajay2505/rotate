@@ -130,18 +130,46 @@ if (document.querySelector(".main_swiper")) {
 }
 
 const scrollReveal = document.querySelectorAll(".scrollReveal");
-scrollReveal.forEach(el => {
-    gsap.to(el, {
-        y: 0,
-        x: 0,
-        opacity: 1,
-        duration: .7,
-        scrollTrigger: {
-            trigger: el.parentElement,
-            start: "top 60%",
-            toggleActions: "play reverse restart reverse",
-            // end: "bottom top",
-            // markers: true,
-        }
-    });
+if (scrollReveal) {
+    scrollReveal.forEach(el => {
+        gsap.to(el, {
+            y: 0,
+            x: 0,
+            opacity: 1,
+            duration: .7,
+            scrollTrigger: {
+                trigger: el.parentElement,
+                start: "top 60%",
+                toggleActions: "play reverse restart reverse",
+                // end: "bottom top",
+                // markers: true,
+            }
+        });
+    });        
+}
+
+document.querySelector("header .bars").addEventListener("click", evt => {
+    evt.currentTarget.classList.toggle("active");
+    document.querySelector("header .nav_content").classList.toggle("active");
 });
+
+const linkedImagesWrapper = document.querySelector(".linkedImagesWrapper");
+if (linkedImagesWrapper) {
+    const hoverLinksWrapper = linkedImagesWrapper.querySelectorAll(".hoverLinksWrapper a");
+    const hoverImages = linkedImagesWrapper.querySelectorAll(".hoverImagesWrapper img");
+    if (hoverLinksWrapper && hoverImages) {
+        hoverLinksWrapper.forEach((link,idx) => {
+            link.addEventListener("mouseenter", () => {
+                const activeImg = linkedImagesWrapper.querySelector(".hoverImagesWrapper img:not(.d-none)");
+                if (activeImg) {
+                    activeImg.classList.remove("active");
+                    activeImg.classList.add("d-none");
+                }
+                hoverImages[idx].classList.remove("d-none");
+                setTimeout(() => {
+                    hoverImages[idx].classList.add("active");
+                }, 50);
+            });
+        })
+    }
+}

@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Flamante Roma';
+    src: url('/fonts/FlamanteRoundMedium.woff2') format('woff2'),
+        url('/fonts/FlamanteRoundMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Hero';
+    src: url('/fonts/Hero.woff2') format('woff2'),
+        url('/fonts/Hero.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     --dark_color: #252324;
@@ -27,6 +45,7 @@ body {
     padding: 0;
     color: #000;
     background-color: var(--main_bg);
+    font-family: "Flamante Roma";
 }
 
 a {
@@ -36,7 +55,6 @@ a {
 
 p {
     margin-bottom: 7px;
-    font-family: "Right Grotesk Wide", sans-serif;
     font-weight: 500;
 }
 
@@ -81,6 +99,10 @@ section {
 
 hr {
     border-color: #252324;
+}
+
+.heroFont {
+    font-family: "Hero";
 }
 
 .w-screen {
@@ -133,6 +155,10 @@ hr {
 
 .red_color {
     color: #E23E32;
+}
+
+.place-items-center {
+    place-items: center;
 }
 
 /* GLOBALS END */
@@ -282,6 +308,25 @@ header {
     pointer-events: none;
 }
 
+header .nav_content {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    transform: translateY(-120%);
+    background-color: var(--news_bg);
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    max-height: 100vh;
+    overflow-y: auto;
+    transition: transform .4s ease-in-out, border-radius .35s ease-in-out;
+}
+
+header .nav_content.active {
+    transform: translateY(0);
+    border-radius: 0;
+    transition: transform .4s ease-in-out, border-radius .35s ease-in-out .3s;
+}
+
 header .container * {
     pointer-events: auto;
 }
@@ -292,7 +337,7 @@ header .logo_wrapper {
 
 header .bars {
     width: 40px;
-    height: 15px;
+    height: 20px;
 }
 
 header .bars::before,
@@ -304,6 +349,15 @@ header .bars::after {
     top: 0;
     pointer-events: none;
     background-color: #000;
+    transition: transform .4s ease-in-out;
+}
+
+header .bars.active::before {
+    transform: rotateZ(45deg) translateY(12px);
+}
+
+header .bars.active::after {
+    transform: rotateZ(-45deg) translateY(-12px);
 }
 
 header .bars::after {
@@ -315,10 +369,32 @@ header .logo_wrapper svg {
     width: 100%;
 }
 
+header .nav_content .content_wrapper {
+    padding-top: 150px;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+header .nav_content.active .content_wrapper {
+    opacity: 1;
+    transition: opacity .5s ease-in-out .4s;
+}
+
+header .nav_content .img_wrapper {
+    /* max-height: 100px; */
+    max-width: 400px;
+    /* border-right: 1px solid #000; */
+}
+
 section.main_section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+section.main_section .round_block {
+    width: 100%;
+    max-width: 570px;
 }
 
 section.main_section .absolute_block {
@@ -343,11 +419,15 @@ section.main_section .clippy_wrapper {
     border-radius: 500px 500px 0px 0px;
     overflow: hidden;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 section.main_section .clippy_wrapper .video_wrapper {
     width: 100vw;
     height: 100vh;
+    flex-shrink: 0;
 }
 
 section.main_section .clippy_wrapper .video_wrapper video {
@@ -396,7 +476,7 @@ section.restaurants_section .swiper_nav_wrapper .next svg {
 }
 
 section.news_section a .icon_wrapper {
-    max-width: 30px;
+    max-width: 50px;
 }
 
 section.news_section .card_wrapper {
@@ -499,4 +579,57 @@ footer form button {
 
 .scrollReveal.right {
     transform: translateX(100px);
+}
+
+.underline {
+    position: relative;
+}
+
+.underline::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transition: width .3s ease-in-out;
+}
+
+.underline.black::before {
+    background-color: #000;
+}
+
+.underline:hover::before {
+    right: 0;
+    width: 0;
+}
+
+.underline.none_to_black::before {
+    width: 0;
+    right: 0;
+    background-color: #000;
+}
+
+.underline.none_to_white::before {
+    width: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.underline.none_to_black:hover::before,
+.underline.none_to_white:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.hoverImagesWrapper img {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity .5s ease-in-out, transform .4s ease-in-out;
+}
+
+.hoverImagesWrapper img.active {
+    opacity: 1;
+    transform: scale(1);
 }
