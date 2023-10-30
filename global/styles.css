@@ -45,6 +45,10 @@ body {
     padding: 0;
     color: #000;
     background-color: var(--main_bg);
+    font-family: "Hero";
+}
+
+h1,h2,h3,h4,h5,h6 {
     font-family: "Flamante Roma";
 }
 
@@ -400,6 +404,7 @@ section.main_section .round_block {
 section.main_section .absolute_block {
     right: 50px;
     bottom: 50px;
+    max-width: 250px;
 }
 
 section.main_section  .heading_block {
