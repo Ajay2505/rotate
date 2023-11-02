@@ -173,3 +173,113 @@ if (linkedImagesWrapper) {
         })
     }
 }
+
+// const underLines = document.querySelectorAll(".underline");
+
+// if (underLines && underLines.length) {
+//     underLines.forEach(underLine => {
+//         let removeClassTimeout;
+
+//         underLine.addEventListener("mouseover", evt => {
+//             clearTimeout(removeClassTimeout); // Clear any pending timeouts
+//             evt.currentTarget.classList.add("active");
+//         });
+
+//         underLine.addEventListener("mouseleave", evt => {
+//             const target = evt.currentTarget;
+//             const lineElement = target.querySelector(".line");
+
+//             if (lineElement) {
+//                 lineElement.addEventListener("transitionend", e => {
+//                     if (e.propertyName === "width") {
+//                         removeClassTimeout = setTimeout(() => {
+//                             target.classList.remove("active");
+//                         }, 0); // Use a minimal timeout
+//                     }
+//                 });
+//             }
+//         });
+//     });
+// }
+
+
+const underLines = document.querySelectorAll(".underline");
+if (underLines && underLines.length) {
+    underLines.forEach(underLine => {
+        underLine.addEventListener("mouseover", evt => {
+            evt.currentTarget.classList.add("active");
+        });
+        underLine.addEventListener("mouseleave", evt => {
+            const target = evt.currentTarget;
+            const lineElement = target.querySelector(".line");
+            if (lineElement) {
+                lineElement.addEventListener("transitionend", e => {
+                    if (e.propertyName === "width") {
+                        target.classList.remove("active");                        
+                    }
+                });
+            }
+        });
+    });
+}
+
+// const underLines = document.querySelectorAll(".underline");
+// if (underLines && underLines.length) {
+//     underLines.forEach(underLine => {
+//         let transitionend = false;
+//         let mouseleave = true;
+//         underLine.addEventListener("mouseover", evt => {
+//             mouseleave = false;
+//             transitionend = false;
+//             evt.currentTarget.classList.add("active");
+//         });
+
+//         underLine.addEventListener("mouseleave", evt => {
+//             // const target = evt.currentTarget;
+//             mouseleave = true;
+//             removeClass();            
+//         });
+
+//         const lineElement = underLine.querySelector(".line");
+//         if (lineElement) {
+//             lineElement.addEventListener("transitionend", e => {
+//                 if (e.propertyName === "width") {
+//                     transitionend = true;
+//                     removeClass();
+//                     // target.classList.remove("active");
+//                 }
+//             });
+//         }
+//         function removeClass() {
+//             if (mouseleave && transitionend) {
+//                 underLine.classList.remove("active");
+//             }
+//         }
+//     });
+// }
+
+
+// const underLines = document.querySelectorAll(".underline");
+
+// if (underLines && underLines.length) {
+//     underLines.forEach(underLine => {
+//         let isMouseOver = false;
+
+//         underLine.addEventListener("mouseover", evt => {
+//             isMouseOver = true;
+//             evt.currentTarget.classList.add("active");
+//         });
+
+//         underLine.addEventListener("transitionend", evt => {
+//             if (evt.propertyName === "width" && !isMouseOver) {
+//                 evt.currentTarget.classList.remove("active");
+//             }
+//         });
+
+//         underLine.addEventListener("mouseleave", () => {
+//             isMouseOver = false;
+//         });
+//     });
+// }
+
+

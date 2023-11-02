@@ -452,9 +452,16 @@ section.restaurants_section a .icon_wrapper {
 
 section.restaurants_section .swiper-slide a .img_wrapper {
     max-width: 300px;
+    max-height: 300px;
+    display: grid;
+    place-items: center;
     margin-bottom: 10px;
     border-radius: 50% 50% 0px 0px;
     overflow: hidden;
+}
+
+section.restaurants_section .swiper-slide a .img_wrapper {
+    height: 100%;
 }
 
 section.restaurants_section .swiper_nav_wrapper {
@@ -590,6 +597,24 @@ footer form button {
     position: relative;
 }
 
+.underline .line {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    width: 0;
+    right: 0;
+    pointer-events: none;
+    background-color: #fff;
+    transition: width .3s ease-in-out;
+}
+
+.underline.active .line {
+    left: 0;
+    width: 100%;
+}
+
+/* 
 .underline::before {
     content: "";
     position: absolute;
@@ -601,14 +626,15 @@ footer form button {
     transition: width .3s ease-in-out;
 }
 
+.underline.active::before {
+    right: 0;
+    width: 0;
+}
+
 .underline.black::before {
     background-color: #000;
 }
 
-.underline:hover::before {
-    right: 0;
-    width: 0;
-}
 
 .underline.none_to_black::before {
     width: 0;
@@ -626,7 +652,7 @@ footer form button {
 .underline.none_to_white:hover::before {
     width: 100%;
     left: 0;
-}
+} */
 
 .hoverImagesWrapper img {
     opacity: 0;
