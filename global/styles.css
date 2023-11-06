@@ -614,7 +614,7 @@ footer form button {
     width: 100%;
 }
 
-/* 
+
 .underline::before {
     content: "";
     position: absolute;
@@ -652,7 +652,7 @@ footer form button {
 .underline.none_to_white:hover::before {
     width: 100%;
     left: 0;
-} */
+}
 
 .hoverImagesWrapper img {
     opacity: 0;

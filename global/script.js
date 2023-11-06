@@ -203,25 +203,25 @@ if (linkedImagesWrapper) {
 // }
 
 
-const underLines = document.querySelectorAll(".underline");
-if (underLines && underLines.length) {
-    underLines.forEach(underLine => {
-        underLine.addEventListener("mouseover", evt => {
-            evt.currentTarget.classList.add("active");
-        });
-        underLine.addEventListener("mouseleave", evt => {
-            const target = evt.currentTarget;
-            const lineElement = target.querySelector(".line");
-            if (lineElement) {
-                lineElement.addEventListener("transitionend", e => {
-                    if (e.propertyName === "width") {
-                        target.classList.remove("active");                        
-                    }
-                });
-            }
-        });
-    });
-}
+// const underLines = document.querySelectorAll(".underline");
+// if (underLines && underLines.length) {
+//     underLines.forEach(underLine => {
+//         underLine.addEventListener("mouseover", evt => {
+//             evt.currentTarget.classList.add("active");
+//         });
+//         underLine.addEventListener("mouseleave", evt => {
+//             const target = evt.currentTarget;
+//             const lineElement = target.querySelector(".line");
+//             if (lineElement) {
+//                 lineElement.addEventListener("transitionend", e => {
+//                     if (e.propertyName === "width") {
+//                         target.classList.remove("active");                        
+//                     }
+//                 });
+//             }
+//         });
+//     });
+// }
 
 // const underLines = document.querySelectorAll(".underline");
 // if (underLines && underLines.length) {
