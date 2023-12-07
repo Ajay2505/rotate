@@ -132,8 +132,8 @@ if (document.querySelector(".main_swiper")) {
 if (document.querySelector(".mySwiper")) {
     const swiper2 = new Swiper(".mySwiper", {
         navigation: {
-            nextEl: ".clippy-next",
-            prevEl: ".clippy-prev",
+            nextEl: ".mySwiper-next",
+            prevEl: ".mySwiper-prev",
         },
         spaceBetween: 20,
         loop: true,
