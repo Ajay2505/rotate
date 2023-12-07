@@ -687,5 +687,6 @@ footer form button {
 
 .mySwiper-btn {
     padding: 10px;
+    border: 1px solid #fff;
     background-color: #fff;
 }
