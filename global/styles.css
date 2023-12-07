@@ -66,7 +66,7 @@ strong {
     font-weight: 600;
 }
 
-img, video {
+img, video, svg {
     width: 100%;
     vertical-align: middle;
 }
@@ -450,6 +450,16 @@ section.restaurants_section a .icon_wrapper {
     max-width: 40px;
 }
 
+section.restaurants_section .swiper-slide {
+    max-width: 300px;
+}
+
+section.restaurants_section .swiper-slide .content_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 section.restaurants_section .swiper-slide a .img_wrapper {
     position: relative;
     max-width: 300px;
@@ -467,9 +477,11 @@ section.restaurants_section .swiper-slide a .absolute_block {
     bottom: 0;
     left: 0;
     right: 0;
+    display: flex;
+    align-items: flex-end;
     padding: 100px 20px 10px 20px;
     overflow-y: auto;
-    background: linear-gradient(to bottom, transparent, #fff);
+    background: linear-gradient(to bottom, transparent -50%, #fff 100%);
     transition: top .2s ease-in-out;
 }
 
@@ -506,9 +518,19 @@ section.restaurants_section .swiper_nav_wrapper .next svg {
 
 section.news_section a .icon_wrapper {
     max-width: 50px;
+    max-height: 80px;
+}
+
+section.news_section a .icon_wrapper svg {
+    height: 100%;
+    object-fit: contain;
 }
 
 section.news_section .card_wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     background-color: var(--main_bg);
 }
@@ -656,4 +678,9 @@ footer form button {
 .hoverImagesWrapper img.active {
     opacity: 1;
     transform: scale(1);
+}
+
+.mySwiper .swiper-slide {
+    width: fit-content;
+    height: auto;
 }

@@ -120,12 +120,40 @@ if (document.querySelector(".main_swiper")) {
         },
         slidesPerView: "auto",
         freeMode: true,
-        spaceBetween: 100,
+        spaceBetween: 70,
         // loop: true,
         allowTouchMove: false,
         mousewheel: {
             releaseOnEdges: true,
         },
+    });
+}
+
+if (document.querySelector(".mySwiper")) {
+    const swiper2 = new Swiper(".mySwiper", {
+        navigation: {
+            nextEl: ".clippy-next",
+            prevEl: ".clippy-prev",
+        },
+        spaceBetween: 20,
+        loop: true,
+        speed: 1000,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        effect: 'easeIn',
+        breakpoints: {
+            480: {
+                slidesPerView: 1,          
+            },
+            640: {
+                slidesPerView: 2,          
+            },
+            1200: {
+                slidesPerView: 3
+            }
+        }
     });
 }
 
