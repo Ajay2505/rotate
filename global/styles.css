@@ -451,6 +451,7 @@ section.restaurants_section a .icon_wrapper {
 }
 
 section.restaurants_section .swiper-slide a .img_wrapper {
+    position: relative;
     max-width: 300px;
     max-height: 300px;
     display: grid;
@@ -459,6 +460,22 @@ section.restaurants_section .swiper-slide a .img_wrapper {
     border-radius: 50% 50% 0px 0px;
     overflow: hidden;
 }
+
+section.restaurants_section .swiper-slide a .absolute_block {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 100px 20px 10px 20px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, transparent, #fff);
+    transition: top .2s ease-in-out;
+}
+
+section.restaurants_section .swiper-slide:hover a .absolute_block {
+    top: 0;
+}   
 
 section.restaurants_section .swiper-slide a .img_wrapper {
     height: 100%;
@@ -597,62 +614,38 @@ footer form button {
     position: relative;
 }
 
-.underline .line {
-    position: absolute;
+.underline::before {
+    content: "";
+    position: absolute;    
     bottom: 0;
-    width: 0;
     height: 2px;
     width: 0;
     right: 0;
-    pointer-events: none;
-    background-color: #fff;
-    transition: width .3s ease-in-out;
+    background-color: #000;
+    transition: width .4s ease-in-out;
 }
 
-.underline.active .line {
-    left: 0;
-    width: 100%;
-}
-
-
-.underline::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    width: 100%;
+.underline.white_underline::before {
     background-color: #fff;
-    transition: width .3s ease-in-out;
 }
 
 .underline.active::before {
-    right: 0;
-    width: 0;
-}
-
-.underline.black::before {
-    background-color: #000;
-}
-
-
-.underline.none_to_black::before {
-    width: 0;
-    right: 0;
-    background-color: #000;
-}
-
-.underline.none_to_white::before {
-    width: 0;
-    right: 0;
-    background-color: #fff;
-}
-
-.underline.none_to_black:hover::before,
-.underline.none_to_white:hover::before {
     width: 100%;
     left: 0;
 }
+
+.underline.rev::before {
+    width: 100%;
+    right: auto;
+    left: 0;
+}
+
+.underline.rev.active::before {
+    left: auto;
+    right: 0;
+    width: 0;
+}
+
 
 .hoverImagesWrapper img {
     opacity: 0;

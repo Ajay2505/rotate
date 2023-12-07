@@ -174,6 +174,8 @@ if (linkedImagesWrapper) {
     }
 }
 
+
+
 // const underLines = document.querySelectorAll(".underline");
 
 // if (underLines && underLines.length) {
@@ -283,3 +285,23 @@ if (linkedImagesWrapper) {
 // }
 
 
+
+const underLines = document.querySelectorAll(".underline");
+if (underLines && underLines.length > 0) {
+  underLines.forEach(line => {
+    let timeStamp = "";
+    line.addEventListener("mouseenter", () => {
+      timeStamp = Date.now();
+      line.classList.add("active");
+    });
+    line.addEventListener("mouseleave", () => {
+      if (Date.now() - timeStamp < 400) {
+        setTimeout(() => {
+          line.classList.remove("active");
+        }, 400 + Date.now() - timeStamp);
+      } else {
+        line.classList.remove("active");
+      }
+    });
+  });
+}
