@@ -430,6 +430,13 @@ section.main_section .clippy_wrapper {
     align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+    section.main_section .clippy_wrapper {
+        width: 200px;
+        height: 100px;
+    }
+}
+
 section.main_section .clippy_wrapper .video_wrapper {
     width: 100vw;
     height: 100vh;
