@@ -185,6 +185,15 @@ document.querySelector("header .bars").addEventListener("click", evt => {
     document.querySelector("header .nav_content").classList.toggle("active");
 });
 
+const headerLinks = document.querySelectorAll("header .nav_content a");
+if (headerLinks) {
+    headerLinks.forEach(link => {
+        link.addEventListener("click", evt => {
+            document.querySelector("header .bars").click();
+        });
+    })
+}
+
 const linkedImagesWrapper = document.querySelector(".linkedImagesWrapper");
 if (linkedImagesWrapper) {
     const hoverLinksWrapper = linkedImagesWrapper.querySelectorAll(".hoverLinksWrapper a");

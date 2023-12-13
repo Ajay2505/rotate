@@ -37,27 +37,31 @@
                             <div class="vstack gap-3">
                                 <div class="hoverLinksWrapper vstack gap-2">
                                     <h2>
-                                        <a class="sec_heading underline white_underline text-white" href="#">
-                                            About the Food Hall
+                                        <a class="sec_heading underline white_underline text-white" onclick="lenis.scrollTo('#about')" href="#about">
+                                            About
                                         </a>
                                     </h2>
                                     <h2>
-                                        <a class="sec_heading underline white_underline text-white" href="#">
-                                            Restaurants 
+                                        <a class="sec_heading underline white_underline text-white" onclick="lenis.scrollTo('#essence')" href="#essence">
+                                            Essence of Exceptionality
                                         </a>
                                     </h2>
                                     <h2>
-                                        <a class="sec_heading underline white_underline text-white" href="#">News <div class="line"></div></a>
+                                        <a class="sec_heading underline white_underline text-white" onclick="lenis.scrollTo('#premier')" href="#premier">
+                                            Premier Experiences
+                                        </a>
                                     </h2>
                                     <h2>
-                                        <a class="sec_heading underline white_underline text-white" href="#">History <div class="line"></div></a>
+                                        <a class="sec_heading underline white_underline text-white" onclick="lenis.scrollTo('#events')" href="#events">
+                                            Events
+                                        </a>
                                     </h2>
+                                    <!-- <h2>
+                                        <a class="sec_heading underline white_underline text-white" onclick="lenis.scrollTo('#">Events')" href="#">Events</a>
+                                    </h2>-->
                                     <h2>
-                                        <a class="sec_heading underline white_underline text-white" href="#">Events <div class="line"></div></a>
-                                    </h2>
-                                    <h2>
-                                        <a class="sec_heading underline white_underline text-white" href="#">Contact <div class="line"></div></a>
-                                    </h2>
+                                        <a class="sec_heading underline white_underline text-white" onclick="lenis.scrollTo('#footer')" href="#footer">Contact</a>
+                                    </h2> 
                                 </div>
 
                                 <div class="hstack gap-1 flex-wrap pt-2">
@@ -100,12 +104,12 @@
         </div>
     </section>
 
-    <section class="history_section main_spacer">
+    <section id="about" class="history_section main_spacer">
         <div class="container">
             <div class="row justify-content-center row-gap-3">
                 <div class="col-lg-4">
                     <div class="content_wrapper scrollReveal left">
-                        <h1 class="sec_heading m-0">History</h1>
+                        <h1 class="sec_heading m-0">About</h1>
                         <div class="my-4">
                             <p class="m-0 text_lg">At Rotate Bar & Kitchen, we invite you to expand your palate, challenge your expectations, and immerse yourself in a world where culinary innovation knows no limits. Join us for a dining experience that transcends the ordinary, where every bite is a celebration of creativity, and every sip is a toast to the extraordinary.</p>
                         </div>
@@ -138,7 +142,7 @@
         </div>
     </section>
 
-    <section data-lenis-prevent class="restaurants_section">
+    <section id="essence" data-lenis-prevent class="restaurants_section">
         <div class="container">
             <h1 class="sec_heading d-flex justify-content-center">
                 <a class="w-fit heading" href="#">
@@ -258,7 +262,7 @@
         </div>
     </section>
 
-    <section class="news_section main_spacer">
+    <section id="premier" class="news_section main_spacer">
         <div class="container">
             <h1 class="sec_heading d-flex justify-content-center">
                 <a class="w-fit text-white heading d-flex gap-3 align-items-center" href="#">
@@ -416,7 +420,7 @@
         </div>
     </section>
 
-    <section class="events_section main_spacer">
+    <section id="events" class="events_section main_spacer">
         <div class="container">
             <div class="row justify-content-center row-gap-3">
                 <!-- <div class="col-lg-1"></div> -->
@@ -457,7 +461,7 @@
         </div>
     </section>    
 
-    <footer class="py-4">
+    <footer id="footer" class="py-4">
         <div class="container">
             <div class="row justify-content-center row-gap-3">
                 <div class="col-lg-9">
