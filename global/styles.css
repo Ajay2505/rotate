@@ -99,6 +99,7 @@ button:disabled {
 section {
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
 }
 
 hr {
