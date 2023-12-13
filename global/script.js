@@ -183,6 +183,7 @@ if (scrollReveal) {
 document.querySelector("header .bars").addEventListener("click", evt => {
     evt.currentTarget.classList.toggle("active");
     document.querySelector("header .nav_content").classList.toggle("active");
+    // evt.currentTarget.classList.contains("active") ? lenis
 });
 
 const headerLinks = document.querySelectorAll("header .nav_content a");

@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Flamante Roma';
-    src: url('/fonts/FlamanteRoundMedium.woff2') format('woff2'),
-        url('/fonts/FlamanteRoundMedium.woff') format('woff');
+    src: url('../fonts/FlamanteRoundMedium.woff2') format('woff2'),
+        url('../fonts/FlamanteRoundMedium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -10,8 +10,8 @@
 
 @font-face {
     font-family: 'Hero';
-    src: url('/fonts/Hero.woff2') format('woff2'),
-        url('/fonts/Hero.woff') format('woff');
+    src: url('../fonts/Hero.woff2') format('woff2'),
+        url('../fonts/Hero.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -587,13 +587,14 @@ section.history_section .content_wrapper .view_more .icon_wrapper {
 section.history_section .images_wrapper .rounded_img_wrapper {
     border-radius: 50% 50% 0 0;
     overflow: hidden;
+    filter: grayscale(.7);
 }
 
 section.history_section .images_wrapper .person_img_wrapper {
     bottom: 0;
     right: 0;
     transform: translate(0%, 20px) rotate(5deg);
-    max-width: 450px;
+    max-width: 250px;
 }
 
 section.history_section .images_wrapper .hand_img_wrapper {
@@ -640,7 +641,28 @@ footer form button {
     transform: translateX(100px);
 }
 
+
 .underline {
+    display: inline;
+    background-image: linear-gradient(to right,currentColor 0,currentColor 100%);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    transition: background-size .4s ease-in-out;
+}
+
+.underline.active {    
+    background-size: 100% 2px;
+}
+
+
+.underline.white_underline::before {
+    background-image: #fff;
+}
+
+/* 
+.underline {
+    display: inline;
     position: relative;
 }
 
@@ -674,7 +696,7 @@ footer form button {
     left: auto;
     right: 0;
     width: 0;
-}
+} */
 
 
 .hoverImagesWrapper img {
