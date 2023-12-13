@@ -135,6 +135,10 @@ if (document.querySelector(".mySwiper")) {
             nextEl: ".mySwiper-next",
             prevEl: ".mySwiper-prev",
         },
+        pagination: {
+            el: ".mySwiper-pagination",
+            type: "fraction",
+        },
         spaceBetween: 20,
         loop: true,
         speed: 1000,
