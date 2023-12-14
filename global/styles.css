@@ -303,6 +303,10 @@ body[data-bg="history"] {
     background-color: var(--history_bg);
 }
 
+body[data-bg="menu"] {
+    background-color: var(--history_bg);
+}
+
 header {
     position: fixed;
     top: 0;
@@ -311,6 +315,21 @@ header {
     padding: 15px;
     z-index: 20;
     pointer-events: none;
+}
+
+header * {
+    pointer-events: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        position: relative;
+    }
+    header .bars {
+        position: fixed !important;
+        top: 40px;
+        right: 25px;
+    }
 }
 
 header .nav_content {
@@ -497,6 +516,13 @@ section.restaurants_section .swiper-slide:hover a .absolute_block {
     top: 0;
 }   
 
+@media only screen and (max-width: 600px) {
+    section.restaurants_section .swiper-slide a .absolute_block {
+        top: 0;
+    }
+}
+
+
 section.restaurants_section .swiper-slide a .img_wrapper {
     height: 100%;
 }
@@ -602,6 +628,16 @@ section.history_section .images_wrapper .hand_img_wrapper {
     bottom: 0;
     max-width: 200px;
     transform: translate(-30%, 50%);
+}
+
+@media only screen and (max-width: 600px) {
+    section.history_section .images_wrapper .hand_img_wrapper {
+        left: 10%;
+        bottom: -20px;
+    }
+    #about {
+        padding-bottom: 200px;
+    }
 }
 
 section.history_section .images_wrapper .hand_img_wrapper svg {
@@ -720,3 +756,4 @@ footer form button {
     border: 1px solid #fff;
     background-color: #fff;
 }
+

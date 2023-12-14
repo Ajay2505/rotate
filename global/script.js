@@ -1,24 +1,24 @@
 
 gsap.registerPlugin(ScrollTrigger);
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical', 
-    gestureDirection: 'vertical', 
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-});
+// const lenis = new Lenis({
+//     duration: 1.2,
+//     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+//     // direction: 'vertical', 
+//     // gestureDirection: 'vertical', 
+//     // smooth: true,
+//     // mouseMultiplier: 1,
+//     // smoothTouch: true,
+//     // touchMultiplier: 2,
+//     // infinite: false,
+// });
 
-lenis.on('scroll', ScrollTrigger.update)
+// lenis.on('scroll', ScrollTrigger.update)
 
-gsap.ticker.add((time)=>{
-  lenis.raf(time * 1000);
-});
+// gsap.ticker.add((time)=>{
+//   lenis.raf(time * 1000);
+// });
 
-gsap.ticker.lagSmoothing(0);
+// gsap.ticker.lagSmoothing(0);
 
 
 const mainClippy = document.querySelector(".main_section .clippy_wrapper");
@@ -80,6 +80,19 @@ ScrollTrigger.create({
     },
     onEnterBack: () => {
         document.body.setAttribute("data-bg", "news");
+    },
+    // markers: true
+});
+
+ScrollTrigger.create({
+    trigger: ".menu_section", 
+    start: "top center", 
+    end: "bottom center", 
+    onEnter: () => {
+        document.body.setAttribute("data-bg", "menu");
+    },
+    onEnterBack: () => {
+        document.body.setAttribute("data-bg", "menu");
     },
     // markers: true
 });
